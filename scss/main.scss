@@ -31,7 +31,7 @@ nav {
   position: sticky;
   top: 0;
   left: 0;
-  z-index: 999; 
+  z-index: 999;
   background-color: $primary-color;
   width: auto;
   @include flexCenter(row, space-between, center);
@@ -59,7 +59,19 @@ article {
     @include flexCenter(column, space-evenly, flex-start);
     padding-top: 50px;
     gap: 25px;
+    animation: slide-in-left 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
+  @keyframes slide-in-left {
+    0% {
+      transform: translateX(-1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
   h1 {
     font-size: 3em;
     padding: 0px;
@@ -80,6 +92,21 @@ article {
       transform: scale(1.1);
     }
   }
+
+  .image-section {
+    animation: slide-in-right 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+  @keyframes slide-in-right {
+    0% {
+      transform: translateX(1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
   img {
     width: 25vw;
     border-radius: 19px;
