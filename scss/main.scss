@@ -2,30 +2,89 @@ $primary-color: #ffefe7;
 $secundary-color: #ffdac6;
 $tertiary-color: #babd8d;
 $primary-text-color: #7c6a0a;
+$quaternion-color: #fa9500;
 $font-stack: "IBM Plex Sans", sans-serif;
+$paragraph-size: 1.5em;
 
 * {
   box-sizing: border-box;
 }
 
-html {
-  margin: 0;
-  padding: 0;
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: $primary-color;
+  font-family: $font-stack;
   scroll-behavior: smooth;
 }
 
 nav {
-  width: 100%;
-  height: 100px;
+  width: auto;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  color: $primary-text-color;
+
+  p {
+    font-size: $paragraph-size;
+    padding-left: 30px;
+  }
+
+  .icons {
+    display: flex;
+    gap: 15px;
+
+    button {
+      background: none;
+      border-style: none;
+    }
+  }
 }
 
-main {
-  background-color: $primary-color;
+article {
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 45px;
+  padding-right: 45px;
+  color: $primary-text-color;
+
+  .impact-section {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    gap: 25px;
+  }
+
+  h1 {
+    margin: 0px;
+    padding: 0px;
+    font-size: 3em;
+  }
+
+  p {
+    font-size: $paragraph-size;
+  }
+
+  button {
+    width: 12vw;
+    padding: 20px;
+    border-style: none;
+    border-radius: 35px;
+    background-color: $quaternion-color;
+    color: #fff;
+    font-size: 1em;
+  }
+
+  img {
+    width: 25vw;
+    border-radius: 19px;
+  }
 }
 
 footer {
-  $background: #fa9500;
-  background-color: $background;
   width: 100%;
   height: 250px;
+  $background: $quaternion-color;
+  background-color: $background;
 }
