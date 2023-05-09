@@ -1,55 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 body {
-  margin: 0px;
-  padding: 0px;
   background-color: #ffefe7;
   font-family: "IBM Plex Sans", sans-serif;
 }
+body nav {
+  padding: 20px 65px 20px 65px;
+}
 
 nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   position: sticky;
   top: 0;
   left: 0;
   z-index: 999;
   background-color: #ffefe7;
-  width: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  width: 100%;
+  height: 90px;
   color: #7c6a0a;
   padding: 15px;
+  margin-bottom: 75px;
 }
 nav p {
-  font-size: 1.5em;
+  font-size: 3rem;
+  vertical-align: middle;
   padding-left: 30px;
 }
 nav .icons {
   display: flex;
-  gap: 15px;
+  gap: 40px;
 }
 nav .icons button {
   background: none;
   border-style: none;
+  cursor: pointer;
+}
+nav .icons-mobile {
+  display: none;
 }
 
-article {
-  width: auto;
+main {
+  padding: 0 65px 0 65px;
+}
+main article {
   color: #7c6a0a;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 45px;
-  padding-right: 45px;
-  padding-top: 70px;
+  padding-bottom: 130px;
 }
-article .impact-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  padding-top: 50px;
-  gap: 25px;
+main article .impact-section {
+  width: 50%;
   animation: slide-in-left 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 @keyframes slide-in-left {
@@ -62,30 +72,33 @@ article .impact-section {
     opacity: 1;
   }
 }
-article h1 {
-  font-size: 3em;
-  padding: 0px;
-  margin: 0px;
+main article h1 {
+  font-size: 6rem;
+  margin: 61px 0;
 }
-article p {
-  font-size: 1.5em;
+main article p {
+  font-size: 2.5rem;
+  margin-bottom: 109px;
 }
-article button {
+main article button {
   background: none;
   border-style: none;
+  cursor: pointer;
 }
-article button {
-  width: 12vw;
-  padding: 20px;
+main article button {
   background-color: #fa9500;
+  width: 260px;
+  height: 65px;
   border-radius: 35px;
   color: white;
-  font-size: 1em;
+  font-size: 2.3rem;
 }
-article button:hover {
+main article button:hover {
   transform: scale(1.1);
 }
-article .image-section {
+main article .image-section {
+  width: 50%;
+  padding-left: 164px;
   animation: slide-in-right 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 @keyframes slide-in-right {
@@ -98,70 +111,68 @@ article .image-section {
     opacity: 1;
   }
 }
-article img {
-  width: 25vw;
+main article img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 19px;
 }
 
-section {
-  width: auto;
-  height: auto;
-  padding: 60px;
-}
 section h2 {
   color: #7c6a0a;
-  font-size: 2em;
+  font-size: 5rem;
 }
-section .healthcare, section .furniture {
+section .healthcare h2, section .about-us h2, section .furniture h2 {
+  font-weight: 400;
   padding-bottom: 60px;
 }
-section .healthcare h2, section .furniture h2 {
-  font-weight: 300;
-  padding-bottom: 60px;
+section .healthcare .card-section, section .about-us .card-section, section .furniture .card-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
-section .healthcare .card-section, section .furniture .card-section {
-  width: auto;
-  height: auto;
+section .healthcare .product-card, section .about-us .product-card, section .furniture .product-card {
+  width: 324px;
+  height: 502px;
+  background-color: #ffdac6;
+  color: #7c6a0a;
+  padding: 20px 21px 0 21px;
+  margin-bottom: 75px;
+  border-radius: 8px;
+}
+section .healthcare .product-card .icon, section .about-us .product-card .icon, section .furniture .product-card .icon {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-  -moz-column-gap: 200px;
-       column-gap: 200px;
-  row-gap: 80px;
+  align-items: flex-end;
 }
-section .healthcare .product-card, section .furniture .product-card {
-  width: 14vw;
-  height: 45vh;
-  background-color: #ffdac6;
-  color: #7c6a0a;
-  padding: 20px;
-  border-radius: 8px;
-}
-section .healthcare .product-card .icon, section .furniture .product-card .icon {
-  width: 100%;
+section .healthcare .product-card .product-image, section .about-us .product-card .product-image, section .furniture .product-card .product-image {
   display: flex;
-  justify-content: flex-end;
-  padding-bottom: 12px;
-}
-section .healthcare .product-card .icon svg, section .furniture .product-card .icon svg {
-  width: 28px;
-  height: 28px;
-}
-section .healthcare .product-card .product-image, section .furniture .product-card .product-image {
-  width: 100%;
-  height: auto;
-  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  padding: 37px 20px 0 20px;
 }
-section .healthcare .product-card .product-image img, section .furniture .product-card .product-image img {
-  width: 12vw;
-  height: 30vh;
+section .healthcare .product-card .product-image img, section .about-us .product-card .product-image img, section .furniture .product-card .product-image img {
+  width: 242px;
+  height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 6px;
+  border-radius: 7px;
+}
+section .healthcare .product-card .product-inf, section .about-us .product-card .product-inf, section .furniture .product-card .product-inf {
+  padding: 17px 20px 0 20px;
+}
+section .healthcare .product-card .product-inf h3, section .about-us .product-card .product-inf h3, section .furniture .product-card .product-inf h3 {
+  font-size: 2.5rem;
+}
+section .healthcare .product-card .product-inf p, section .about-us .product-card .product-inf p, section .furniture .product-card .product-inf p {
+  font-size: 1.5rem;
 }
 section .furniture .product-card {
   background-color: #babd8d;
@@ -169,49 +180,54 @@ section .furniture .product-card {
 }
 
 .about-us {
-  padding-bottom: 60px;
+  padding-bottom: 235px;
 }
 .about-us h2 {
-  font-weight: bold;
-  padding-bottom: 60px;
+  font-weight: 500;
+  font-size: 5rem;
+  margin-bottom: 162px;
 }
 .about-us .mission-section {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  gap: 20px;
 }
 .about-us .mission-section .earth, .about-us .mission-section .innovation {
-  width: 30vw;
   display: flex;
-  gap: 40px;
-  color: #e86424;
+  flex-direction: row;
+  width: 50%;
 }
 .about-us .mission-section .earth img, .about-us .mission-section .innovation img {
   -o-object-fit: contain;
      object-fit: contain;
+  width: 150px;
+  height: 150px;
 }
 .about-us .mission-section .earth p, .about-us .mission-section .innovation p {
+  color: #b54215;
+  font-size: 30px;
+  font-weight: 500;
   text-align: center;
-  font-size: 1.5em;
 }
 .gallery h2 {
-  font-weight: bold;
-  padding-bottom: 60px;
+  font-size: 50px;
+  font-weight: 500;
 }
 .gallery .gallery-images {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 67px 0 113px 0;
+  gap: 20px;
 }
 .gallery .gallery-images img {
-  width: 28vw;
-  height: 45vh;
+  width: 31%;
+  aspect-ratio: 4/5;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: 5px 35%;
-     object-position: 5px 35%;
   border-radius: 16px;
 }
 .gallery .gallery-images img:hover {
@@ -219,36 +235,60 @@ section .furniture .product-card {
 }
 
 .location {
-  color: #e86424;
+  color: #E86424;
 }
 .location h2 {
-  padding-bottom: 60px;
-  padding-top: 60px;
+  font-size: 50px;
+  font-weight: 500;
 }
 .location .map {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding-bottom: 50px;
+  padding: 67px 0 50px 0;
+  width: 100%;
 }
-.location h3,
+.location img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.location h3 {
+  font-size: 30px;
+  font-weight: 400;
+}
 .location p {
-  font-size: 1.5em;
+  font-size: 25px;
+  font-weight: 400;
+  padding-bottom: 124px;
 }
 
 footer {
   background-color: #fa9500;
   width: 100%;
   height: auto;
-  padding: 40px;
+  padding: 43px 65px 65px 65px;
   color: white;
+}
+footer h4 {
+  font-weight: 500;
+  font-size: 30px;
+  margin-bottom: 37px;
+}
+footer p {
+  font-weight: 400;
+  font-size: 20px;
+  margin-bottom: 21px;
 }
 footer .social-media {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  padding-bottom: 40px;
+  gap: 35px;
+}
+footer .social-media img {
+  width: 41px;
+  height: 41px;
 }/*# sourceMappingURL=main.css.map */
